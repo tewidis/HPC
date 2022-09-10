@@ -2,7 +2,7 @@ MD = markdown
 PDF = pdf
 
 all: introduction locality time_energy_power io_avoiding_algorithms \
-	cache_oblivious_algorithms
+	cache_oblivious_algorithms work_span_model
 
 clean:
 	rm -f *~
@@ -23,3 +23,6 @@ io_avoiding_algorithms: $(MD)/io_avoiding_algorithms.md
 	
 cache_oblivious_algorithms: $(MD)/cache_oblivious_algorithms.md
 	pandoc -V geometry:margin=1in -o $(PDF)/cache_oblivious_algorithms.pdf $(MD)/cache_oblivious_algorithms.md
+	
+work_span_model: $(MD)/work_span_model.md
+	pandoc -V geometry:margin=1in -o $(PDF)/work_span_model.pdf $(MD)/work_span_model.md
