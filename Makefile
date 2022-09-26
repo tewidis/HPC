@@ -2,7 +2,8 @@ MD = markdown
 PDF = pdf
 
 all: introduction locality time_energy_power io_avoiding_algorithms \
-	cache_oblivious_algorithms work_span_model openmp comparison_based_sorting
+	cache_oblivious_algorithms work_span_model openmp comparison_based_sorting \
+	list_ranking
 
 clean:
 	rm -f *~
@@ -32,3 +33,6 @@ openmp: $(MD)/openmp.md
 	
 comparison_based_sorting: $(MD)/comparison_based_sorting.md
 	pandoc -V geometry:margin=1in -o $(PDF)/comparison_based_sorting.pdf $(MD)/comparison_based_sorting.md
+	
+list_ranking: $(MD)/list_ranking.md
+	pandoc -V geometry:margin=1in -o $(PDF)/list_ranking.pdf $(MD)/list_ranking.md
