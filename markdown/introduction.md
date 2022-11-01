@@ -36,7 +36,7 @@ absolute limits of scale and speed?
     * Still assume constant cost per operation
     * Processors can communicate via shared variables
     * Reduce total cost by up to P, where P is the number of processors
-        - O(nlogn(n) / P)
+        - O(n * log(n) / P)
 3. Distributed memory network model: Interconnected network of RAMs
     * Each processor has separate memory, no processor can read or write to any
     other processor's memory

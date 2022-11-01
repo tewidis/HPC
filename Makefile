@@ -3,7 +3,7 @@ PDF = pdf
 
 all: introduction locality time_energy_power io_avoiding_algorithms \
 	cache_oblivious_algorithms work_span_model openmp comparison_based_sorting \
-	list_ranking tree_computations shared_memory_parallel_bfs
+	list_ranking tree_computations shared_memory_parallel_bfs distributed_memory
 
 clean:
 	rm -f *~
@@ -42,3 +42,6 @@ tree_computations: $(MD)/tree_computations.md
 
 shared_memory_parallel_bfs: $(MD)/shared_memory_parallel_bfs.md
 	pandoc -V geometry:margin=1in -o $(PDF)/shared_memory_parallel_bfs.pdf $(MD)/shared_memory_parallel_bfs.md
+
+distributed_memory: $(MD)/distributed_memory.md
+	pandoc -V geometry:margin=1in -o $(PDF)/distributed_memory.pdf $(MD)/distributed_memory.md

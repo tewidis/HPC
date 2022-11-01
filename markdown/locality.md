@@ -26,8 +26,8 @@
         - Consider this the I/O complexity
 4. Example:
     * Reduction (sum all elements in an array)
-        - W(n) is greater than or equal to n-1 additions (Omega(n))
-        - Q(n;Z,L) is greater than or equal to ceil(n/L) transfers (Omega(n/L))
+        - W(n) is greater than or equal to n-1 additions (O(n))
+        - Q(n;Z,L) is greater than or equal to ceil(n/L) transfers (O(n/L))
     * I/O complexity doesn't depend on Z
         - Doesn't reuse data, which is bad
 
@@ -54,8 +54,8 @@ alignment?
 
 1. Give a simple (trivial) lower bound on the asymptotic number of transfers
 when sorting an array of elements with a comparison-based algorithm
-    * W(n) = Omega(nlogn)
-    * Q(n;Z,L) = Omega(ceil(n/L))
+    * W(n) = O(n * log(n))
+    * Q(n;Z,L) = O(ceil(n/L))
         - Must read each element at least once, so the algorithm is bounded by
         ceil(n/L)
     * Actual answer is (n/L)log(n/L)/log(Z/L)
@@ -65,9 +65,9 @@ when sorting an array of elements with a comparison-based algorithm
 1. C = MATMUL(A, B) where A, B, C are n x n
 2. Give a simple (trivial) lower bound on the asymptotic number of transfers
     * W(n) = O(n^3) (non-Strassen)
-    * Q(n;Z,L) = Omega(ceil(n^2/L))
+    * Q(n;Z,L) = O(ceil(n^2/L))
         * Must touch all n^2 elements divided by the block size
-    * Tighter lower bound is Omega(n^3/L/sqrt(Z))
+    * Tighter lower bound is O(n^3/L/sqrt(Z))
 
 ## I/O Example Reduction
 
@@ -131,7 +131,7 @@ inner-most loop
 
 1. Work optimality: Two-level algorithm should do the same asymptotic work as
 the RAM algorithm
-    * W(n) = theta(W'(n))
+    * W(n) = O(W'(n))
 2. High computational intensity: Ratio of work to words transferred
     * Maximize I(n;Z,L) = W(n) / ( L * Q(n;Z,L) )
     * Intensity has units of operations per word
@@ -142,15 +142,15 @@ the RAM algorithm
 
 1. Consider the following algorithms:
     * Algorithm 1:
-        - W1(n) = theta(n)
-        - Q1(n;Z,L) = theta(n/L)
+        - W1(n) = O(n)
+        - Q1(n;Z,L) = O(n/L)
     * Algorithm 2:
-        - W2(n) = theta(nlogn)
-        - Q2(n;Z,L) = theta( n / (L * logZ) )
+        - W2(n) = O(n * log(n))
+        - Q2(n;Z,L) = O( n / (L * logZ) )
 2. Which algorithm is better?
     * Insufficient information: We want low work and high intensity
-        - I1 = theta(1)
-        - I2 = theta(logn * logZ)
+        - I1 = O(1)
+        - I2 = O(log(n) * logZ)
     * Algorithm 1 does lower work while algorithm 2 has higher intensity
 
 ## Intensity - Balance and Time
@@ -267,5 +267,5 @@ capacity and transfer size
     * Lots of research on locality-sensitive algorithms based on this model
 2. To exploit a memory hierarchy algorithmically, organize data accesses to
 maximize reuse
-* For an algorithm to scale well to future memory hierarchies, you want intensity
+    * For an algorithm to scale well to future memory hierarchies, you want intensity
 to at least match, but preferably exceed, the machine balance

@@ -66,8 +66,7 @@ findRoots(P[1:n], R[1:n])
 
 ## Work-Optimal List Scan/Prefix-Sum - Part 1
 
-1. Wyllie's algorithm uses prefix-sums to compute list ranks, but is not work-
-optimal
+1. Wyllie's algorithm uses prefix-sums to compute list ranks, but is not work-optimal
     * W(n) = O(n * log(n))
     * D(n) = O(log(n))
 2. Consider a trick where we shrink the list to size m < n
@@ -149,7 +148,7 @@ only one of the four options remain
 
 1. To shrink the list for Wyllie's algorithm, we can use the parallel
 independent set algorithm
-    * Similar to pointer-jumping, but only over the elements of the indpendent
+    * Similar to pointer-jumping, but only over the elements of the independent
     set
     * After we've calculated the independent set, we remove it from the list
         - This requires updating the next pointers and pushing each nodes' rank
@@ -208,7 +207,7 @@ postorder(root, V[1:n], v0)
 
 ## Another Tree Traversal
 
-1. Consider the same tree from the previous side. What would a preorder notation
+1. Consider the same tree from the previous slide. What would a preorder notation
 look like for this tree?
 
 ``` C
@@ -309,7 +308,7 @@ values so that the levels appear at each child-to-parent source nodes (stars)
 
 1. Two frameworks for performing parallel operations on trees
     * One is built on top of work-optimal lists
-    * The other is on the rank-compress framework for evaluating expressiong
+    * The other is on the rank-compress framework for evaluating expression
     trees
 2. Linearizing a tree is an important concept for achieving load balance
     * Load balancing is required for performing parallel algorithms at scale

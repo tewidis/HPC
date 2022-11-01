@@ -21,8 +21,8 @@ sort:
 3. Calculate the following numbers of transfer operations in units of trillions
 of operations (Tops)
     * n = 2^50 / 2^8 = 2^42 records
-    * Z = 2^36/2^8 = 2^28 records
-    * L = 2^15/2^8 = 2^7 records
+    * Z = 2^36 / 2^8 = 2^28 records
+    * L = 2^15 / 2^8 = 2^7 records
 
 | Complexity             | Number of Transfers | Speedup vs nlog(n)/log(2) |
 |:----------------------:|:-------------------:|:-------------------------:|
