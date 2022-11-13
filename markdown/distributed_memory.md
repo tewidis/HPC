@@ -197,14 +197,14 @@ for i <- 0 to P-1 do
 ``` C
 let s = local value
 bitmask <- 1
-while bitmaks < P do
+while bitmask < P do
     partner <- rank ^ bitmask
     if rank & bitmask then
         sendAsync(s -> partner)
         waitAll()
         break
     else
-        recvAsync(t -> partner)
+        recvAsync(t <- partner)
         waitAll()
         s <- s + t
     bitmask <- (bitmask << 1)
@@ -221,14 +221,14 @@ if rank = 0
 ``` C
 let s = local value
 bitmask <- 1
-while bitmaks < P do
+while bitmask < P do
     partner <- rank ^ bitmask
     if rank & bitmask then
         sendAsync(s -> partner)
         waitAll()
         break
     elseif partner < P
-        recvAsync(t -> partner)
+        recvAsync(t <- partner)
         waitAll()
         s <- s + t
     bitmask <- (bitmask << 1)
@@ -254,14 +254,28 @@ if rank = 0
     * One processor has all the data initially and wants to send a copy to all
     other processors
     * Reduce and broadcast are duals
+
+| ![reducebroadcast](images/distributed_memory_reduce_broadcast.png) |
+|:--:|
+| Reduce-Broadcast |
+
 2. Scatter sends a piece of its data to each of the other processors
     * The dual to a scatter is a gather
+
+| ![scattergather](images/distributed_memory_scatter_gather.png) |
+|:--:|
+| Scatter-Gather |
+
 3. All-gather: Similar to a gather, but instead of only the root having all of
 the data, each node contains all of the data
     * Dual is a reduce-scatter
         - All processes contain a vector of data
         - They globally reduce the vector using some sort of vector-reduce
         - Result is distributed to all processes
+
+| ![allGatherReduceScatter](images/distributed_memory_allgather_reducescatter.png) |
+|:--:|
+| allGather-reduceScatter |
 
 ## A Pseudocode API for Collectives
 
