@@ -4,7 +4,7 @@ PDF = pdf
 all: introduction locality time_energy_power io_avoiding_algorithms \
 	cache_oblivious_algorithms work_span_model openmp comparison_based_sorting \
 	list_ranking tree_computations shared_memory_parallel_bfs distributed_memory \
-	topology matrix_multiply distributed_sort distributed_bfs
+	topology matrix_multiply distributed_sort distributed_bfs graph_partitioning
 
 clean:
 	rm -f *~
@@ -58,3 +58,6 @@ distributed_sort: $(MD)/distributed_sort.md
 
 distributed_bfs: $(MD)/distributed_bfs.md
 	pandoc -V geometry:margin=1in -o $(PDF)/distributed_bfs.pdf $(MD)/distributed_bfs.md
+
+graph_partitioning: $(MD)/graph_partitioning.md
+	pandoc -V geometry:margin=1in -o $(PDF)/graph_partitioning.pdf $(MD)/graph_partitioning.md
