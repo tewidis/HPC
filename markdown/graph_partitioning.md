@@ -114,7 +114,7 @@ partitioning
     * Assume the following:
         - Every vertex has a partition label; O(1) access time
         - Maximum degree of any vertex is d
-2. What is the sequential running tim eto compute gain(a, b) in terms of
+2. What is the sequential running time to compute gain(a, b) in terms of
 d, n1 = |V1|, n2 = |V2|
     * O(d)
     * Need to sweep over the adjacent vertices, which is at most d
@@ -253,7 +253,7 @@ cut in the next finer graph.
 ## Spectral Partitioning - Part 1: The Graph Laplacian
 
 1. Instead of representing a graph as an adjacency matrix, represent it as an
-indcidence matrix
+incidence matrix
     * Each row is an edge, each column is a vertex
     * Graph Laplacian, L(G) = C' * C
         - Diagonals: Count incident edges (always 1)

@@ -216,12 +216,12 @@ scheme?
         - L >= # full phases
         - L >= floor(W / Max multiplies per phase) = W/(2 * sqrt(2) * M^(3/2))-1
     * Lower bound of transfers is number of phases times M
-        - # Words communicated by 1 node >= W/(2 * sqrt(2) * sqrt(M)) - M
+        - Number of words communicated by 1 node >= W/(2 * sqrt(2) * sqrt(M)) - M
     * Number of multiplies W >= mnk / P
 2. Lower bound on volume of communication by one node
-    * # words >= n^3 / (2 * sqrt(2) * P * sqrt(M)) - M
+    * Number of words >= n^3 / (2 * sqrt(2) * P * sqrt(M)) - M
     * M = O(n^2/P)
-    * # words >= n^2 / sqrt(P)
+    * Number of words >= n^2 / sqrt(P)
     * Tnet(n;P) >= a + B * n^2/sqrt(P)
         - What is the factor for the alpha term?
 
@@ -234,7 +234,7 @@ scheme?
 1. What is the lower bound on the number of messages a node must send?
     * n^2/sqrt(P) is the minimum volume sent by a node
     * M(n;P) = O(n^2/P) is the largest message a node can send
-    * # messages = n^2/sqrt(P) / M(n;P) = O(sqrt(P))
+    * Number of messages = n^2/sqrt(P) / M(n;P) = O(sqrt(P))
 
 ## Matching (Or Beating!) The Lower Bounds
 

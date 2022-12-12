@@ -47,7 +47,7 @@ network with a linear (or greater) bisection width
 1. What is the communication time of a bitonic merge, assuming a block-distributed,
 binary-exchange scheme on a hypercube?
 2. (a + Bn/P) * log(P)
-    * Each process sends n/P words at each stange
+    * Each process sends n/P words at each stage
     * Communication only occurs in the first log(P) stages
 
 ## Bitonic Merge via Transposes

@@ -11,8 +11,8 @@ persepective of linear algebra
 
 1. Adjacency matrix: Number the nodes, use NxN matrix to represent edges
     * 0 = not connected, 1 = connected
-2. For an undirected graph G with n vertices and m edges, it's adjacency matrix
-is nxn
+2. For an undirected graph G with n vertices and m edges, its adjacency matrix
+is NxN
     * G = (V,E)
     * |V| = n
     * |E| = m
@@ -71,7 +71,7 @@ for-all ui = 1 and di = inf do
 
 ## Matrix-Based BFS Quiz
 
-1. Mark the entries o fu that may need updates, given f.
+1. Mark the entries of u that may need updates, given f.
 
 | ![quiz2](images/distributed_bfs_update_vector_quiz.png) |
 |:--:|
@@ -79,7 +79,7 @@ for-all ui = 1 and di = inf do
 
 ## 1D Distributed BFS
 
-1. Partition the columns across processes (corresponds ot a partitioning of the
+1. Partition the columns across processes (corresponds to a partitioning of the
 vertices)
     * Also implies a partitioning of u
     * Must replicate the frontier vector across processes

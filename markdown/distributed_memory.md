@@ -63,7 +63,7 @@ store the entire human brain?
 1. Tmsg(n) = a + B * n
     * Tau = compute [time/op]
     * In practice, tau << B << a (1e-12, 1e-9, 1e-6)
-2. Which are trime?
+2. Which are true?
     * Computation < communication, so avoid communication (true)
     * It's faster to send a few large messages than many small messages (true)
     * None of the above
