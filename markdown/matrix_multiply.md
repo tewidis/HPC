@@ -134,7 +134,7 @@ tree-based all-to-one reduce?
     * P * log(P)
     * P^2
     * none of these (true)
-3. Effiency: E(n;P) = S(n;P) / P = T(n) / (P * T(n;P))
+3. Efficiency: E(n;P) = S(n;P) / P = T(n) / (P * T(n;P))
     * E(n;P) = (tau * n * P) / P * (tau * n * log(P) + a * log(P) + B * n * log(P))
     * E(n;P) = 1 / ((1 + P/tau) * log(P) + (a/tau) * (log(P)/n))
         - Because the (1 + P/tau) * log(P) term scales with P, there is no
